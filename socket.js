@@ -3,11 +3,24 @@
 
 var net = require('net');
 var server = net.createServer();
+var sockets = [];
 server.on('connection', function(socket) {
 	console.log('got a new connection');
 	socket.setEncoding("utf8");
+	sockets.push(socket);
 	socket.on('data', function(data) {
 		console.log('got data:', data);
+		sockets.forEach(function(s){
+			if(s !== socket)
+			{
+				s.write(data);
+			}
+		});
+	});
+	socket.on('close', function() {
+		console.log('connection closed');
+		var index = sockets.indexOf(socket);
+		sockets.splice(index, 1);
 	});
 });
 server.on('error', function(err) {
