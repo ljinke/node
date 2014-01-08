@@ -7,6 +7,9 @@ require('http').createServer(function(req, res) {
 	console.log("Opened file.");
 
 	rs.on('data', function(data) {
+		//Returns true if the entire data was flushed successfully to the kernel buffer.
+		//Returns false if all or part of the data was queued in user memory. 
+		//'drain' will be emitted when the buffer is again free. 
 		if (!res.write(data)) {
 			rs.pause();
 			console.log("pause to read file.")
