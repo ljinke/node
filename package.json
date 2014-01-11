@@ -1,0 +1,8 @@
+{
+ 	"name" : "node-excerices", 
+ 	"email" : "ljinke@gmail.com",
+  "url" : "",
+  "dependencies" : {
+  	"socket.io" : "*"
+  }
+}
