@@ -1,8 +1,12 @@
 {
  	"name" : "node-excerices", 
  	"email" : "ljinke@gmail.com",
-  "url" : "",
-  "dependencies" : {
-  	"socket.io" : "*"
-  }
+ 	"version": "1.0.0",
+  	"url" : "",
+  	"dependencies" : {
+  		"socket.io" : "*"
+  	},
+  	"devDepencencies" : {
+  		
+  	}
 }
